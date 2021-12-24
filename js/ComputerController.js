@@ -71,7 +71,7 @@ class ComputerController {
   }
   
   fit(posX) {
-		this.nn.fit([[...this._x]], human.pos.x < posX ? [[1, 0]] : [[0, 1]])
+    this.nn.fit([[...this._x]], human.pos.x < posX ? [[1, 0]] : [[0, 1]])
   }
   
   reset() {
