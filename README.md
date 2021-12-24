@@ -1,4 +1,4 @@
-# Retro Synthwave
+# BangBang
 
 ![screenshot](screenshot.png)
 
