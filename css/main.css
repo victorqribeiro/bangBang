@@ -1,10 +1,10 @@
-html, body{
+html, body {
   margin: 0;
   padding: 0;
   overscroll-behavior: contain;
 }
 
-canvas{
+canvas {
   display: block;
   touch-action: none;
 }

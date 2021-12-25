@@ -19,8 +19,8 @@ const init = () => {
   c = canvas.getContext('2d')
   c.scale(scale, scale)
   cannonBall = null
-  human = new Cannon({x: w - 100, y: h - 100}, 0, true)
-  const computer = new Cannon({x: 100, y: h - 100}, 1)
+  human = new Cannon({ x: w - 100, y: h - 100 }, 0, true)
+  const computer = new Cannon({ x: 100, y: h - 100 }, 1)
   const nn = new Dejavu([4, 2, 2], 0.1, 10)
   computerController = new ComputerController(computer, nn)
   turn = 0
@@ -29,7 +29,7 @@ const init = () => {
 }
 
 const mainLoop = () => {
-  if (turn === human.turn) 
+  if (turn === human.turn)
     human.update()
   else
     computerController.update()
@@ -39,7 +39,7 @@ const mainLoop = () => {
 }
 
 const draw = () => {
-  c.clearRect(0,0,w,h)
+  c.clearRect(0, 0, w, h)
   cannonBall && cannonBall.show()
   human.show()
   computerController.player.show()
@@ -59,38 +59,38 @@ const changeTurn = () => {
 
 const bindEvents = () => {
   $('body').addEventListener('keydown', e => {
-    switch(e.keyCode){
-      case 32 :
-          human.shoot()
-          if (gameOver) init()
+    switch (e.keyCode) {
+      case 32:
+        human.shoot()
+        if (gameOver) init()
         break
-      case 37 :
-          human.isRotatingDown = true
+      case 37:
+        human.isRotatingDown = true
         break
-      case 38 :
-          human.isIncreasingStrength = true
+      case 38:
+        human.isIncreasingStrength = true
         break
-      case 39 :
-          human.isRotatingUp = true
+      case 39:
+        human.isRotatingUp = true
         break;
-      case 40 :
-          human.isDecreasingStrength = true
+      case 40:
+        human.isDecreasingStrength = true
         break
     }
   })
   $('body').addEventListener('keyup', e => {
-    switch(e.keyCode){
-      case 37 :
-          human.isRotatingDown = false
+    switch (e.keyCode) {
+      case 37:
+        human.isRotatingDown = false
         break
-      case 38 :
-          human.isIncreasingStrength = false
+      case 38:
+        human.isIncreasingStrength = false
         break
-      case 39 :
-          human.isRotatingUp = false
+      case 39:
+        human.isRotatingUp = false
         break;
-      case 40 :
-          human.isDecreasingStrength = false
+      case 40:
+        human.isDecreasingStrength = false
         break
     }
   })
@@ -115,7 +115,7 @@ const bindEvents = () => {
         human.isIncreasingStrength = false
         human.isDecreasingStrength = true
       }
-    } 
+    }
     oldY = touch.clientY
   })
   $('body').addEventListener('touchend', e => {

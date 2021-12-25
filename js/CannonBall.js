@@ -1,6 +1,6 @@
 class CannonBall {
 
-  constructor(pos, angle, strength, target){
+  constructor(pos, angle, strength, target) {
     this.pos = {
       x: pos.x || 0,
       y: pos.y || 0
@@ -9,22 +9,22 @@ class CannonBall {
     this.strength = strength || 0
     this.target = target
     this.acc = {
-      x: Math.cos( this.angle ) * this.strength,
-      y: Math.sin( this.angle ) * this.strength
+      x: Math.cos(this.angle) * this.strength,
+      y: Math.sin(this.angle) * this.strength
     }
   }
 
   isGone() {
     return this.pos.y > h
   }
-  
+
   isHit() {
     const dX = this.pos.x - this.target.x
     const dY = this.pos.y - this.target.y
     return Math.sqrt(dX * dX + dY * dY) < 30
   }
 
-  update(){
+  update() {
     if (this.isHit()) {
       return gameOver = true
     }
@@ -43,9 +43,9 @@ class CannonBall {
     this.acc.y += 1
   }
 
-  show(){
+  show() {
     c.beginPath()
-    c.arc( this.pos.x, this.pos.y, 5, 0, TWOPI )
+    c.arc(this.pos.x, this.pos.y, 5, 0, TWOPI)
     c.fillStyle = "black"
     c.fill()
   }
