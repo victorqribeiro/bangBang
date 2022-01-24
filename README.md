@@ -14,10 +14,10 @@ The Neural Network is fresh each round, it will shoot at random at the first tim
 
 ### On Desktop
 
-**Left** and **Right** arrows **rotate** the cannon. **Up** and **Down** arrows increase and decrease the **strenght** of the projectile. **SpaceBar shoots**.
+**Left** and **Right** arrows **rotate** the cannon. **Up** and **Down** arrows increase and decrease the **strength** of the projectile. **Spacebar shoots**.
 
 ### On Mobile
 
-**Touch and drag up and down** on the **right** side of the screen will **rotate** the cannon.
-**Touch and drag up and down** on the **left** side of the screen will adjust the **strength**.
-**Tap the screen** will **shoot**.
+**Touch and drag up and down** on the **right** side of the screen to **rotate** the cannon.
+**Touch and drag up and down** on the **left** side of the screen to adjust the **strength**.
+**Tap the screen** to **shoot**.
