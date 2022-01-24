@@ -2,11 +2,16 @@ let canvas, c, w, h, scale, human, computerController, u, cannonBall, turn, game
 
 const TWOPI = 2 * Math.PI
 
+const FRAMES_PER_SECOND = 60
+
+const FRAME_MIN_TIME = (1000/60) * (60 / FRAMES_PER_SECOND) - (1000/60) * 0.5
+
 const $ = _ => document.querySelector(_)
 
 const $c = _ => document.createElement(_)
 
 const init = () => {
+  lastFrameTime = 0
   scale = window.devicePixelRatio
   u && cancelAnimationFrame(u)
   canvas = $('canvas')
@@ -25,10 +30,15 @@ const init = () => {
   computerController = new ComputerController(computer, nn)
   turn = 0
   gameOver = false
-  mainLoop()
+  mainLoop(0)
 }
 
-const mainLoop = () => {
+const mainLoop = time => {
+  if(time - lastFrameTime < FRAME_MIN_TIME){
+    u = requestAnimationFrame(mainLoop)
+    return
+  }
+  lastFrameTime = time
   if (turn === human.turn)
     human.update()
   else
