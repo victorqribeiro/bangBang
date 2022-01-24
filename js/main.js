@@ -10,8 +10,8 @@ const init = () => {
   scale = window.devicePixelRatio
   u && cancelAnimationFrame(u)
   canvas = $('canvas')
-  w = innerWidth
-  h = innerHeight
+  w = Math.min(innerWidth, 1920)
+  h = Math.min(innerHeight, 1080)
   canvas.width = w * scale
   canvas.height = h * scale
   canvas.style.width = w + 'px'
